@@ -1,4 +1,5 @@
 #! /bin/bash
+# Translate 800,000 sentences using 8 GPUs.
 
 export CUDA_VISIBLE_DEVICES=0 && python translate_100000.py data/100000_in_domain_40k_60k.vi translation/100000_in_domain_40k_60k.zh &
 export CUDA_VISIBLE_DEVICES=1 && python translate_100000.py data/100000_in_domain_60k_80k.vi translation/100000_in_domain_60k_80k.zh &
