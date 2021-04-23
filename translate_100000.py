@@ -17,7 +17,7 @@ with open(sys.argv[2], mode='w') as output_file:  # output file
         # translate Vietnamese to Chinese,...
         tokenizer.src_lang = "vi"  # Vietnamese code
         # print(f'Translating line {i}...')
-        t2 = time.time()
+        # t2 = time.time()
         encoded_vi = tokenizer(article_vi, return_tensors="pt").to('cuda')
         generated_tokens = model.generate(
             **encoded_vi,
