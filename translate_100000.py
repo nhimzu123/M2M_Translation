@@ -27,7 +27,7 @@ with open(sys.argv[2], mode='w') as output_file:  # output file
         # print(f'Time cost to translate line {i}:', time.time() - t2)
         for text in texts:
             output_file.writelines(text + '\n')
-        if i == 0:
+        if i == 3:
             print('Translating... Please wait')
 
 # print('Total time cost:', time.time() - t)
