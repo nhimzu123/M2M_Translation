@@ -57,3 +57,7 @@ The project folder contains the two following subfolders:
 
 
 
+<<<<<<< HEAD
+=======
+Check out the "run_translate.sh" file to configure the file names & GPU devices.
+>>>>>>> 3255f617c9521a592d0e90f05e5f56e5472c797e
