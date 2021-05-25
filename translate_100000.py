@@ -15,18 +15,17 @@ with open(sys.argv[2], mode='w') as output_file:  # output file
     for i, line in enumerate(lines):
         article_vi = line
         # translate Vietnamese to Chinese,...
-        tokenizer.src_lang = "en"  # Vietnamese code
+        tokenizer.src_lang = "vi"  # Vietnamese code
         # print(f'Translating line {i}...')
         # t2 = time.time()
         encoded_vi = tokenizer(article_vi, return_tensors="pt").to('cuda')
         generated_tokens = model.generate(
             **encoded_vi,
-            forced_bos_token_id=tokenizer.lang_code_to_id["vi"]  # Chinese code
+            forced_bos_token_id=tokenizer.lang_code_to_id["zh"]  # Chinese code
         ).to('cuda')
         texts = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
         # print(f'Time cost to translate line {i}:', time.time() - t2)
-        for text in texts:
-            output_file.writelines(text + '\n')
+        output_file.writelines(texts[0] + '\n')
         if i == 3:
             print('Translating... Please wait')
 
